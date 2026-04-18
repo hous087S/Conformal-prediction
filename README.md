@@ -5,7 +5,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue) ![scikit-learn](https://img.shields.io/badge/scikit--learn-green)
 
-Implementation of **InfoSP** and **InfoSCOP** from [Gazin et al. (2024)]([https://arxiv.org/abs/2410.00914](https://arxiv.org/abs/2403.12295)) — methods that select only *informative* prediction intervals (length ≤ 2λ) while controlling the False Coverage Rate (FCR ≤ α).
+Implementation of **InfoSP** and **InfoSCOP** from [Gazin et al. (2024)](https://arxiv.org/abs/2403.12295) — methods that select only *informative* prediction intervals (length ≤ 2λ) while controlling the False Coverage Rate (FCR ≤ α).
 
 ---
 
@@ -49,4 +49,4 @@ Both methods satisfy FCR ≤ α = 0.10 and all intervals respect the 2λ = 31,00
 
 ## Reference
 
-Gazin, U., Durand, G., Blanchard, G., & Roquain, E. (2024). *Selecting Informative Conformal Prediction Sets with False Coverage Rate Control.* [arXiv:2410.00914](https://arxiv.org/abs/2410.00914)
+Gazin, U., Durand, G., Blanchard, G., & Roquain, E. (2024). *Selecting Informative Conformal Prediction Sets with False Coverage Rate Control.* [arXiv:2410.00914](https://arxiv.org/abs/2403.12295)
