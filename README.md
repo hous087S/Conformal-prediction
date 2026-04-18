@@ -3,9 +3,9 @@
 > ENSAE Paris · Statistical Modelling Seminar · 2024-2025  
 > Authors: Houssem Bouabid · Guy Delloye · Supervised by Ulysse Gazin
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue) ![scikit-learn](https://img.shields.io/badge/scikit--learn-green) ![License](https://img.shields.io/badge/license-MIT-gray)
+![Python](https://img.shields.io/badge/Python-3.10+-blue) ![scikit-learn](https://img.shields.io/badge/scikit--learn-green)
 
-Implementation of **InfoSP** and **InfoSCOP** from [Gazin et al. (2024)](https://arxiv.org/abs/2410.00914) — methods that select only *informative* prediction intervals (length ≤ 2λ) while controlling the False Coverage Rate (FCR ≤ α).
+Implementation of **InfoSP** and **InfoSCOP** from [Gazin et al. (2024)]([https://arxiv.org/abs/2410.00914](https://arxiv.org/abs/2403.12295)) — methods that select only *informative* prediction intervals (length ≤ 2λ) while controlling the False Coverage Rate (FCR ≤ α).
 
 ---
 
@@ -20,18 +20,6 @@ Classical conformal prediction outputs intervals for *all* test points — inclu
 
 Both methods guarantee **FCR ≤ α** on the selected set under exchangeability.
 
----
-
-## How it works
-
-1. **Nonconformity scores** on the calibration set: `s(X, Y) = |Y − f̂(X)| / σ̂(X)`
-2. **Adjusted p-values** q_i — smallest α such that the conformal interval C^α_i ⊆ [−λ, λ]
-3. **Benjamini–Hochberg** selection on {q_i} at level α → selected set S
-4. **Adjusted intervals** with α′ = α|S|/m for all i ∈ S
-
-```
-FCR = E[ #{i∈S : Yᵢ∉Cᵢ} / |S| ] ≤ α
-```
 
 ---
 
@@ -47,32 +35,6 @@ FCR = E[ #{i∈S : Yᵢ∉Cᵢ} / |S| ] ≤ α
 
 ---
 
-## Quickstart
-
-```bash
-git clone https://github.com/your-username/infosp-salary.git
-cd infosp-salary
-pip install -r requirements.txt
-```
-
-Download the dataset from Kaggle, place the CSV at the project root, then open the notebook:
-
-```bash
-jupyter notebook InfoSP_InfoSCOP_notebook.ipynb
-```
-
-### Requirements
-
-```
-numpy
-pandas
-scikit-learn
-matplotlib
-jupyter
-```
-
----
-
 ## Results
 
 | Method | \|S\| / m | FCR | Median interval length | Time (s) |
@@ -82,17 +44,6 @@ jupyter
 
 Both methods satisfy FCR ≤ α = 0.10 and all intervals respect the 2λ = 31,000 bound.
 
----
-
-## Project structure
-
-```
-infosp-salary/
-├── InfoSP_InfoSCOP_notebook.ipynb   # main notebook
-├── requirements.txt
-├── README.md
-└── Salary Prediction of Data Professions.csv
-```
 
 ---
 
